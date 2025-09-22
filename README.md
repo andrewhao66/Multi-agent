@@ -21,6 +21,22 @@ pip install -r requirements.txt
 - pandas
 - numpy
 - yfinance
+- python-dotenv（選用，便於載入 `.env`）
+
+### 環境變數設定
+
+專案在根目錄提供了預設的 `.env` 檔案，可作為設定 LLM 供應商、API key 與模型等參數的範本：
+
+```env
+LLM_PROVIDER=openrouter
+LLM_API_KEY=your_api_key_here
+LLM_BASE_URL=https://openrouter.ai/api/v1
+LLM_MODEL=gpt-4.1-mini
+LLM_TEMPERATURE=0.2
+LLM_MAX_TOKENS=1024
+```
+
+若需啟用真實的 LLM 代理人，請將 `LLM_API_KEY` 改為有效的金鑰，並依需求調整模型與其他參數。程式會自動讀取 `.env`（若安裝 `python-dotenv`）或直接從系統環境變數載入設定。
 
 ## 使用方式
 
